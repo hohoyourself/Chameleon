@@ -677,3 +677,54 @@ Shows a group of links.
     }
 }
 ```
+
+### Image credit (optional)
+
+To add credit to images, simply add the following credit data to `props` of the component that contains images.
+
+```json
+"imgCredit": {
+    "credit": "Photo by Someone via Somewhere",
+    "href": ""
+}
+```
+
+For example, to add credit information to the image used in `ItemSummary`:
+
+```json
+{
+    "component": "ItemSummary",
+    "props": {
+        "heading": "{heading}",
+        "sub": "{sub}",
+        "text": "{text}",
+        "href": "",
+        "img": "",
+        "imgCredit": {
+            "credit": "Photo by Someone via Somewhere",
+            "href": ""
+        }
+    }
+}
+```
+
+### Embed HTML
+
+You can embed HTML in fields such as `sub`, `title`, and `text`.
+
+To specify HTML, use object `{"__html":"Your <b>HTML</b> here."}` in place of text values.
+
+For example, to use HTML for `sub` and `text` in the `ItemSummary` component:
+
+```json
+{
+    "component": "ItemSummary",
+    "props": {
+        "heading": "{heading}",
+        "sub": {"__html":"Your <b>HTML</b> here."},
+        "text": {"__html":"Your <b>HTML</b> here."},
+        "href": "",
+        "img": ""
+    }
+}
+```
